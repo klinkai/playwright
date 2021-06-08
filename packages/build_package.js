@@ -31,34 +31,34 @@ const ROOT_PATH = path.join(__dirname, '..');
 const PLAYWRIGHT_CORE_FILES = ['bin', 'lib', 'types', 'NOTICE', 'LICENSE', ];
 
 const PACKAGES = {
-  'playwright': {
+  '@klinkai/playwright': {
     description: 'A high-level API to automate web browsers',
     browsers: ['chromium', 'firefox', 'webkit', 'ffmpeg'],
     // We copy README.md additionally for Playwright so that it looks nice on NPM.
     files: [...PLAYWRIGHT_CORE_FILES, 'README.md'],
   },
-  'playwright-core': {
+  '@klinkai/playwright-core': {
     description: 'A high-level API to automate web browsers',
     browsers: [],
     files: PLAYWRIGHT_CORE_FILES,
   },
-  'playwright-test': {
+  '@klinkai/playwright-test': {
     description: 'Playwright Test Runner',
     browsers: ['chromium', 'firefox', 'webkit', 'ffmpeg'],
     files: PLAYWRIGHT_CORE_FILES,
     name: '@playwright/test',
   },
-  'playwright-webkit': {
+  '@klinkai/playwright-webkit': {
     description: 'A high-level API to automate WebKit',
     browsers: ['webkit'],
     files: PLAYWRIGHT_CORE_FILES,
   },
-  'playwright-firefox': {
+  '@klinkai/playwright-firefox': {
     description: 'A high-level API to automate Firefox',
     browsers: ['firefox'],
     files: PLAYWRIGHT_CORE_FILES,
   },
-  'playwright-chromium': {
+  '@klinkai/playwright-chromium': {
     description: 'A high-level API to automate Chromium',
     browsers: ['chromium', 'ffmpeg'],
     files: PLAYWRIGHT_CORE_FILES,
