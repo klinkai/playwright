@@ -147,8 +147,13 @@ export abstract class BrowserType extends SdkObject {
     tempDirectories.push(artifactsDir);  
 
     if (!userDataDir) {
-      userDataDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `playwright_${this._name}dev_profile-`));
-      tempDirectories.push(userDataDir);
+      const userDataDirArg = args.find(arg => arg.startsWith('--custom-user-data-dir'))?.split('=')[1]
+      if (!userDataDirArg) {
+        userDataDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), `playwright_${this._name}dev_profile-`));
+        tempDirectories.push(userDataDir);
+      } else {
+        userDataDir = userDataDirArg
+      }
     }
 
     const browserArguments = [];
